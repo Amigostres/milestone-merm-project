@@ -35,7 +35,8 @@ export default function Home() {
   return (
     <Container className="homeContainer">
       <div className="d-flex flex-wrap justify-content-around align-items-center">
-        {movies ? (
+        {/* the entire body of the page */}
+        {movies ? ( 
           // CREATES A CARD FOR EACH MOVIE IMAGE
           movies.results.map((movie) => (
             <div className="m-4" key={movie.id}>
@@ -44,7 +45,6 @@ export default function Home() {
                 style={{ width: "200px", height: "450px", marginTop: "50px", border: 'solid black 1px' }}
               >
                 <Nav> {/* Title and stars */}
-                  <Nav.Item>
                     <Link to={`/details/${movie.id}`}>
                       <Button
                         style={{ position: "absolute", zIndex: '1', opacity: '0', left: '-.5px', top: "0", width: "200px", height: "300px", objectFit: "cover" }}
@@ -52,18 +52,20 @@ export default function Home() {
 
                       ></Button>
                     </Link>
+                    {/* image */}
                     <Card.Img
                       variant="top"
                       src={getImageUrl(movie.poster_path)}
                       alt="Movie poster"
                       // style={{ position: "absolute", left: '-.7px', top: "0", width: "200px", height: "300px", objectFit: "cover" }}
                     />
-                  </Nav.Item>
                 </Nav>
+                {/* movie titles */}
                 <Card style={{ position: "absolute", bottom: "0", top: "67%", right: "0", left: "0" }}> {/* added */}
                   <Card.Title style={{ textAlign: "center" }}>{movie.original_title}</Card.Title>
                   <Stars movie_id = { movie.id } />
-                  <Nav>
+                  {/* Details and Reviews button */}
+                  <Nav> 
                     <Nav.Item>
                       <Link to={`/details/${movie.id}`}>
                         <Button
