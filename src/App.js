@@ -1,5 +1,5 @@
 import "./App.css";
-import { HashRouter as Router, Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 
@@ -11,7 +11,8 @@ import Details from "./views/details";
 function App() {
   return (
     <Router>
-      <Container
+      {/* here we will add all the Nav items */}
+      <Container 
         style={{
           backgroundImage:
             "linear-gradient(92.83deg, #4b0082 0%, #000000 100%)",
@@ -20,8 +21,8 @@ function App() {
           zIndex: 10,
           padding: 5,
         }}
-      >
-        <Nav justify variant="tabs, dark" defaultActiveKey="/home" bg="dark">
+        >
+        <Nav justify variant="tabs, dark" defaultActiveKey="/" bg="dark">
           <Nav.Item>
             <Nav.Link as={Link} to="/" className="navLink" style={{ textDecoration: "none" }}>
               Discover
